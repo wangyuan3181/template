@@ -1,6 +1,6 @@
 <template>
 	<div class='footer'>
-		footer
+		Ant Design ©2018 Created by Ant UED
 	</div>
 </template>
 
@@ -11,7 +11,7 @@
 <style lang='scss' scoped>
 .footer {
 	width: 100%;
-	height: 100px;
-	background: #888;
+	height: 60px;
+	line-height: 60px;
 }
 </style>

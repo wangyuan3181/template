@@ -1,4 +1,9 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import {
+  createRouter,
+  createWebHashHistory,
+  createWebHistory,
+  RouteRecordRaw,
+} from 'vue-router'
 
 const Basic = () => import('../Layouts/Basic.vue')
 
@@ -12,6 +17,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     component: Basic,
+    redirect: '/home',
     children: [
       {
         path: '/home',
@@ -27,6 +33,13 @@ const routes: Array<RouteRecordRaw> = [
           title: '我的',
         },
       },
+      {
+        path: '/teleport',
+        component: loadComponent('Teleport'),
+        meta: {
+          title: '内置组件',
+        },
+      },
     ],
   },
   {
@@ -36,8 +49,8 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(), // hash 模式
-  // history: createWebHistory(), // history 模式
+  // history: createWebHashHistory(), // hash 模式
+  history: createWebHistory('/demo/'), // history 模式
   routes,
 })
 
